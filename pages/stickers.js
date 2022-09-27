@@ -1,11 +1,9 @@
-import Image from "next/image";
-import Link from "next/link";
 import React from "react";
 import ProductCard from "../components/common/ProductCard";
 
-const Tshirts = () => {
+const stickers = () => {
     const productData = {
-        image: "https://m.media-amazon.com/images/I/51bi44feoKL._UX569_.jpg",
+        image: "https://m.media-amazon.com/images/I/61YnYuNntdL._SX679_.jpg",
     };
     return (
         <section className='text-gray-600 body-font'>
@@ -20,4 +18,4 @@ const Tshirts = () => {
     );
 };
 
-export default Tshirts;
+export default stickers;

@@ -2,8 +2,11 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { AiOutlineShoppingCart } from "react-icons/ai";
+import Cart from "../Cart";
 
 const Navbar = () => {
+    const [isCartOpen, setIsCartOpen] = React.useState(false);
+
     return (
         <header class='text-gray-600 body-font shadow'>
             <div class='container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-start md:items-center'>
@@ -26,10 +29,16 @@ const Navbar = () => {
                         <a class='mr-5 hover:text-gray-900'>Stickers</a>
                     </Link>
                 </nav>
-                <button class='absolute md:static top-2 right-2 md:inline-flex items-center py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0 mx-5  font-medium md:text-xl'>
+                <button
+                    class='absolute md:static top-2 right-2 md:inline-flex items-center py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0 mx-5  font-medium md:text-xl'
+                    onClick={() => {
+                        setIsCartOpen(true);
+                    }}
+                >
                     <span className='hidden md:block'>Cart</span>
                     <AiOutlineShoppingCart className='pl-2 text-4xl' />
                 </button>
+                <Cart isOpen={isCartOpen} setIsOpen={setIsCartOpen} />
             </div>
         </header>
     );

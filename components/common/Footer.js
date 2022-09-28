@@ -2,82 +2,68 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
+const footerNavigation = {
+    products: [
+        { name: 'Tshirt', href: '#' },
+        { name: 'Hoodies', href: '#' },
+        { name: 'Mugs', href: '#' },
+        { name: 'Sticker', href: '#' },
+    ],
+    support: [
+        { name: 'Who we are', href: '#' },
+        { name: 'Careers', href: '#' },
+        { name: 'Terms & Conditions', href: '#' },
+        { name: 'Privacy', href: '#' },
+    ],
+    customerService: [
+        { name: 'Contact', href: '#' },
+        { name: 'Shipping', href: '#' },
+        { name: 'Secure Payments', href: '#' },
+        { name: 'FAQ', href: '#' },
+    ],
+}
+
 const Footer = () => {
     return (
         <footer className='text-gray-600 body-font'>
             <div className='container px-5 pt-24 mx-auto w-full flex flex-col md:flex-row flex-wrap  items-start md:text-left text-center order-first'>
                 <div className='w-2/5 flex items-start flex-col '>
                     <Image src='/logo.png' layout='fixed' width={200} height={80} alt='hero' />
-                    <p class='mt-2 text-base text-gray-600'>Focus on code we will handle your clothing</p>
+                    <p class='mt-2 ml-1 text-sm text-gray-500 hover:text-gray-600'>Focus on code we will handle your clothing</p>
                 </div>
                 <div className='w-3/5 flex flex-col md:flex-row items-start justify-start'>
                     <div className='lg:w-1/4 md:w-1/2 w-full md:px-4'>
                         <h2 className='title-font text-start font-medium text-brandGray2 tracking-widest text-sm mb-3 uppercase'>Menu</h2>
                         <nav className='list-none flex flex-col items-start mb-10'>
-                            <li>
-                                <Link href='/'>
-                                    <a className='text-gray-600 hover:text-gray-800'>Tshirts</a>
+                            {footerNavigation.products.map((item) => (
+                                <Link href='/' >
+                                    <a className='text-gray-500 hover:text-gray-600 text-sm'>{item.name}</a>
                                 </Link>
-                            </li>
-                            <li>
-                                <Link href='/'>
-                                    <a className='text-gray-600 hover:text-gray-800'>Huddies</a>
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href='/'>
-                                    <a className='text-gray-600 hover:text-gray-800'>Mugs</a>
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href='/'>
-                                    <a className='text-gray-600 hover:text-gray-800'>Sticker</a>
-                                </Link>
-                            </li>
+                            ))}
                         </nav>
                     </div>
                     <div className='lg:w-1/4 md:w-1/2 w-full md:px-4'>
-                        <h2 className='title-font text-start font-medium text-brandGray2 tracking-widest text-sm mb-3 uppercase'>SUPOORT</h2>
+                        <h2 className=' text-start font-medium text-brandGray2 tracking-base text-sm mb-3 uppercase'>SUPpORT</h2>
                         <nav className='list-none flex flex-col items-start mb-10'>
-                            <li>
-                                <Link href='/'>
-                                    <a className='text-gray-600 hover:text-gray-800'>Contact</a>
+                            {footerNavigation.support.map((item) => (
+                                <Link href='/' >
+                                    <a className='text-gray-500 hover:text-gray-600 text-sm'>{item.name}</a>
                                 </Link>
-                            </li>
-                            <li>
-                                <Link href='/'>
-                                    <a className='text-gray-600 hover:text-gray-800'>Terms</a>
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href='/'>
-                                    <a className='text-gray-600 hover:text-gray-800'>Privacy Policy</a>
-                                </Link>
-                            </li>
+                            ))}
                         </nav>
                     </div>
                     <div className='lg:w-1/4 md:w-1/2 w-full md:px-4'>
-                        <h2 className='title-font text-start font-medium text-brandGray2 tracking-widest text-sm mb-3 uppercase'>CATEGORIES</h2>
+                        <h2 className='title-font text-start font-medium text-brandGray2 tracking-bases text-sm mb-3 uppercase'>CATEGORIES</h2>
                         <nav className='list-none flex flex-col items-start mb-10'>
-                            <li>
-                                <Link href='/'>
-                                    <a className='text-gray-600 hover:text-gray-800'>Instagram</a>
+                            {footerNavigation.customerService.map((item) => (
+                                <Link href='/' >
+                                    <a className='text-gray-500 hover:text-gray-600 text-sm'>{item.name}</a>
                                 </Link>
-                            </li>
-                            <li>
-                                <Link href='/'>
-                                    <a className='text-gray-600 hover:text-gray-800'>Tiktok</a>
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href='/'>
-                                    <a className='text-gray-600 hover:text-gray-800'>Youtube</a>
-                                </Link>
-                            </li>
+                            ))}
                         </nav>
                     </div>
                     <div className='lg:w-1/4 md:w-1/2 w-full md:px-4'>
-                        <h2 className='title-font text-start font-medium text-brandGray2 tracking-widest text-sm mb-3'>DOWNLOAD THE APP</h2>
+                        <h2 className='title-font text-start font-medium text-brandGray2 tracking-base text-sm mb-3'>DOWNLOAD THE APP</h2>
                         {/* <AppStore /> */}
                     </div>
                 </div>
